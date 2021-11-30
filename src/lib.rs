@@ -23,7 +23,7 @@ pub struct User {
     password: String,
 }
 
-struct SocksReply {
+pub struct SocksReply {
     // From rfc 1928 (S6),
     // the server evaluates the request, and returns a reply formed as follows:
     //
@@ -239,7 +239,7 @@ impl Merino {
     }
 }
 
-struct SOCKClient {
+pub struct SOCKClient {
     stream: TcpStream,
     auth_nmethods: u8,
     auth_methods: Arc<Vec<u8>>,
