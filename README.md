@@ -56,6 +56,28 @@ merino --users users.csv
 merino --help 
 ```
 
+### Docker
+# build
+`docker build -t rust-merino-socks5proxy:latest .`
+# run detached; there is no way to exit once running unless you kill the shell
+`docker run -d --name rm-s5 rust-merino-socks5proxy:latest merino --no-auth`
+# get logs
+`
+                      _
+  _ __ ___   ___ _ __(_)_ __   ___
+ | '_ ` _ \ / _ \ '__| | '_ \ / _ \
+ | | | | | |  __/ |  | | | | | (_) |
+ |_| |_| |_|\___|_|  |_|_| |_|\___/
+
+ A SOCKS5 Proxy server written in Rust
+
+ 2021-12-10T07:43:10.253 INFO  merino > Listening on 0.0.0.0:1080
+ 2021-12-10T07:43:10.253 INFO  merino > Serving Connections...`
+
+# get shell
+`docker exec -it rm-s5 bash`
+
+
 # 🚥 Roadmap
 
 - [x] IPV6 Support
